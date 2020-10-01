@@ -1,0 +1,79 @@
+@import "normalize.css";
+
+$color-dark-l: #545454;
+$color-dark-3xl: #292929;
+$color-dark-xl: #4C4C4C;
+$color-dark-m: #B2B2B2;
+$color-dark-s: #CDCDCD;
+
+$color-light-s: #FAFAFA;
+$color-light-xl: #FFFFFF;
+$color-light-l: #F6F6F6;
+
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+:root {
+    font-size: 10px;
+}
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+
+         &__text-content {
+            
+        }
+        &__title {
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 3.2rem;
+            line-height: 110%;
+
+            letter-spacing: 6%;
+
+            color: $color-primary;
+        }
+        
+
+		&__subtitle {
+            font-family: Arial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+
+            letter-spacing: 0.1em;
+
+            color: $color-light-xl;
+        }
+
+		&__ul {
+            width: 30%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a {
+                font-family: Arial;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 1.5rem;
+                line-height: 160%;
+
+                color: $color-dark-s;
+            }
+        }
+}
+
+.action {
+    border-bottom: 3px solid $color-primary;
+}
