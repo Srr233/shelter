@@ -3,18 +3,41 @@
   font-size: 10px;
 }
 
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+.action {
+  border-bottom: 3px solid #F1CDB3;
+}
+.action a {
+  color: #fff;
 }
 
-.header .wrapper {
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h3 {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.5rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.header .container {
   position: relative;
 }
-.header__container {
+.header__wrapper {
   position: absolute;
   top: 61px;
-  width: 100%;
+  width: 97.5%;
   display: flex;
   justify-content: space-between;
 }
@@ -54,31 +77,19 @@
   color: #CDCDCD;
 }
 
-.action {
-  border-bottom: 3px solid #F1CDB3;
-}
-.action a {
-  color: #fff;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-}
-
 .start-screen {
   background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  padding-top: 18rem;
 }
-.start-screen__container {
+.start-screen__wrapper {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 18rem;
 }
 .start-screen__content {
-  width: 46rem;
-  height: 45rem;
+  padding-bottom: 8rem;
+  width: 39%;
 }
 .start-screen__title {
   width: 80%;
@@ -87,7 +98,7 @@
   font-weight: normal;
   font-size: 4.4rem;
   line-height: 130%;
-  margin-top: 0.55em;
+  margin-bottom: 41px;
   color: #FFFFFF;
 }
 .start-screen__subtitle {
@@ -96,7 +107,7 @@
   font-weight: normal;
   font-size: 1.5rem;
   line-height: 160%;
-  margin-top: 2.8em;
+  margin-bottom: 41px;
   color: #CDCDCD;
 }
 .start-screen__button {
@@ -109,6 +120,37 @@
   font-size: 1.7rem;
   line-height: 130%;
   letter-spacing: 0.06em;
-  margin-top: 2.38em;
   color: #292929;
+}
+.start-screen__img-container {
+  align-self: flex-end;
+}
+
+.about {
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+}
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10.08%;
+}
+.about__content {
+  width: 36%;
+}
+.about__title {
+  padding-right: 5%;
+  padding-bottom: 2.4rem;
+}
+.about__subtitle {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 160%;
+  color: #4C4C4C;
+}
+.about__subtitle-one {
+  padding-bottom: 2.5rem;
 }
