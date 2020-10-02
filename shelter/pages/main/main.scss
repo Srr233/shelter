@@ -87,15 +87,17 @@ h3 {
 
             color: $color-light-xl;
         }
-
-        &__ul {
+        nav {
             width: 36.9%;
+            padding-top: 1.07em;
+        }
+        &__ul {
+            width:100%;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding-bottom: 0.2em;
             a {
                 font-family: Arial;
                 font-style: normal;
@@ -210,5 +212,125 @@ h3 {
 
 		&__img-container {
             
+        }
+}
+
+.our-friends {
+    background: $color-light-l;
+    padding-top: 8.1rem;
+		&__wrapper {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+		&__title1 {
+            text-align: center;
+        }
+
+		&__slider-container {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 4.2em;
+
+            .card:nth-child(3) {
+                margin: 0 6.40em 0 6.45em;
+            }
+        }
+        &__arrow {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            padding: 1.58em 1.28em;
+
+            background: $color-light-l;
+            border: 2px solid $color-primary;
+            border-radius: 100px;
+        }
+		&__arrow-left {
+            margin-right: 4em;
+        }
+
+		&__arrow-right {
+            margin-left: 4em;
+        }
+
+		&__button {
+            padding: 0.9em 2.6em;
+            margin: 3.48em 0 5.87em 0;
+
+            background: $color-primary;
+            border-radius: 100px;
+
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.7rem;
+
+            line-height: 130%;
+            letter-spacing: 0.06em;
+
+            color: $color-dark-3xl;
+        }
+}
+.card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: $color-light-s;
+    border-radius: 9px;
+		
+
+        &__img {
+            width: 100%;
+            img {
+                object-fit: cover;
+                width: 27rem;
+                height: 27rem;
+            }
+        }
+
+		&__name {
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2.0rem;
+            line-height: 2.3rem;
+            text-align: center;
+            letter-spacing: 0.06em;
+
+            color: $color-dark-l;
+
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+        }
+
+		&__button {
+            padding: 1.3rem 4.22rem;
+
+            border-radius: 100px;
+            border: 2px solid $color-primary;
+            background: $color-light-s;
+
+            margin-bottom: 1.8em;
+            
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.7rem;
+            line-height: 130%;
+
+            letter-spacing: 0.06em;
+
+            color: $color-dark-3xl;
         }
 }

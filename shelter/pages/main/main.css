@@ -61,12 +61,15 @@ h3 {
   margin-left: 0.3em;
   color: #FFFFFF;
 }
-.header__ul {
+.header nav {
   width: 36.9%;
+  padding-top: 1.07em;
+}
+.header__ul {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 0.2em;
 }
 .header__ul a {
   font-family: Arial;
@@ -153,4 +156,98 @@ h3 {
 }
 .about__subtitle-one {
   padding-bottom: 2.5rem;
+}
+.our-friends {
+  background: #F6F6F6;
+  padding-top: 8.1rem;
+}
+.our-friends__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.our-friends__title1 {
+  text-align: center;
+}
+.our-friends__slider-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4.2em;
+}
+.our-friends__slider-container .card:nth-child(3) {
+  margin: 0 6.4em 0 6.45em;
+}
+.our-friends__arrow {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 1.58em 1.28em;
+  background: #F6F6F6;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+}
+.our-friends__arrow-left {
+  margin-right: 4em;
+}
+.our-friends__arrow-right {
+  margin-left: 4em;
+}
+.our-friends__button {
+  padding: 0.9em 2.6em;
+  margin: 3.48em 0 5.87em 0;
+  background: #F1CDB3;
+  border-radius: 100px;
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FAFAFA;
+  border-radius: 9px;
+}
+.card__img {
+  width: 100%;
+}
+.card__img img {
+  object-fit: cover;
+  width: 27rem;
+  height: 27rem;
+}
+.card__name {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.card__button {
+  padding: 1.3rem 4.22rem;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  background: #FAFAFA;
+  margin-bottom: 1.8em;
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
 }
