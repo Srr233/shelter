@@ -251,3 +251,53 @@ h3 {
   letter-spacing: 0.06em;
   color: #292929;
 }
+
+.help__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.help__title {
+  width: 30%;
+  text-align: center;
+  margin-top: 8.1rem;
+}
+.help__how {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  row-gap: 5.6rem;
+  margin-top: 6rem;
+}
+.help__how figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 5.97rem;
+}
+.help__how div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.08em;
+}
+.help__how #bowl {
+  padding-top: 0.1rem;
+}
+.help__how #vita {
+  padding-top: 0.2rem;
+}
+.help__how #coll {
+  padding-top: 0.3rem;
+}
+.help__how figcaption {
+  text-align: center;
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}

@@ -44,6 +44,7 @@ h3 {
     color:  $color-dark-l;
 }
 
+
 .header {
 
         .container {
@@ -332,5 +333,67 @@ h3 {
             letter-spacing: 0.06em;
 
             color: $color-dark-3xl;
+        }
+}
+
+.help {
+
+		&__wrapper {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+		&__title {
+            width: 30%;
+            text-align: center;
+            margin-top: 8.1rem;
+        }
+
+		&__how {
+            width: 100%;
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            row-gap: 5.6rem;
+            margin-top: 6rem;
+
+            figure {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                margin: 0 5.97rem;
+            }
+            div {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 2.08em;
+            }
+            #bowl {
+                padding-top: 0.1rem;
+            }// костыль макетный, одна штука 
+            #vita {
+                padding-top: 0.2rem;
+            }// костыль макетный, два штука 
+            #coll {
+                padding-top: 0.3rem;
+            }// костыль макетный, три штука 
+            figcaption {
+                text-align: center;
+
+                font-family: Georgia;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 2.0rem;
+                line-height: 115%;
+                letter-spacing: 0.06em;
+
+                color: $color-dark-l;
+            }
+            
         }
 }
