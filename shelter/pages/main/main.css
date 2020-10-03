@@ -321,7 +321,7 @@ h5 {
 }
 
 .in-addition {
-  padding-top: 8.8rem;
+  padding: 8.8rem 0 9.4rem 0;
   background: #F6F6F6;
 }
 .in-addition__wrapper {
@@ -339,7 +339,7 @@ h5 {
 }
 .in-addition__content {
   width: 30%;
-  margin: 0.42em 1.5em;
+  margin: 0.42em 1.46em;
 }
 .in-addition__title {
   width: 89%;
@@ -367,9 +367,105 @@ h5 {
   color: #B2B2B2;
 }
 
+.footer {
+  padding: 3.8rem 0 0 0;
+  background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+}
+.footer__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.footer__content-wrapper {
+  width: 61.6%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.9rem 0 0 0;
+}
+.footer__contact {
+  width: 30rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.footer__contact h3 {
+  margin-bottom: 4.4rem;
+}
+.footer__map {
+  width: 30rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.footer__map h3 {
+  margin-bottom: 3.3rem;
+}
+.footer__title {
+  color: #FFFFFF;
+}
+.footer__email {
+  position: relative;
+  padding: 0 0 0 6rem;
+  margin-bottom: 4.9rem;
+}
+.footer__email::before {
+  position: absolute;
+  content: url(../../assets/icons/mail.png);
+  top: -0.2rem;
+  left: 0;
+}
+.footer__number {
+  position: relative;
+  padding: 0 0 0 6rem;
+}
+.footer__number::before {
+  position: absolute;
+  content: url(../../assets/icons/phone.png);
+  top: -0.5rem;
+  left: 0;
+}
+.footer__place-one {
+  position: relative;
+  padding: 0 0 0 4.1rem;
+  margin-bottom: 3.7rem;
+}
+.footer__place-one::before {
+  position: absolute;
+  content: url(../../assets/icons/pin.png);
+  top: 0.55rem;
+  left: -0.1rem;
+}
+.footer__place-two {
+  position: relative;
+  padding: 0 0 0 4.1rem;
+}
+.footer__place-two::before {
+  position: absolute;
+  content: url(../../assets/icons/pin.png);
+  top: -0.5rem;
+  left: -0.1rem;
+}
+.footer__text {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+
 @media (max-width: 1024px) {
   .start-screen__wrapper {
     flex-direction: column;
     align-items: center;
+  }
+
+  .footer__wrapper {
+    flex-direction: column;
+  }
+
+  .footer__content-wrapper {
+    width: 100%;
+    justify-content: space-evenly;
   }
 }
