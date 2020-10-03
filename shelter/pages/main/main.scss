@@ -582,7 +582,16 @@ h5 {
             top: -.5rem;
             left: -.1rem;
         }
-        
+
+        &__img-wrapper {
+            width: 30rem;
+            height: 100%;
+        }
+        &__img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
 
         &__text {
             font-family: Georgia;
@@ -608,5 +617,8 @@ h5 {
     .footer__content-wrapper {
         width: 100%;
         justify-content: space-evenly;
+    }
+    .footer__img-wrapper {
+        align-self: center;
     }
 }
