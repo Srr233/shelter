@@ -1,0 +1,376 @@
+@import "../main/normalize.css";
+
+$color-dark-l: #545454;
+$color-dark-3xl: #292929;
+$color-dark-xl: #4C4C4C;
+$color-dark-m: #B2B2B2;
+$color-dark-s: #CDCDCD;
+
+$color-light-s: #FAFAFA;
+$color-light-xl: #FFFFFF;
+$color-light-l: #F6F6F6;
+
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+:root {
+    font-size: 10px;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 1.5rem; 
+}
+
+h3 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.5rem;
+    line-height: 130%;
+
+    letter-spacing: 0.06em;
+
+    color:  $color-dark-l;
+}
+h4 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.0rem;
+    line-height: 125%;
+
+    letter-spacing: 0.06em;
+
+    color: $color-dark-l;
+}
+h5 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 110%;
+
+    letter-spacing: 0.06em;
+
+    color: $color-dark-l;
+}
+.header {
+    position: sticky;
+    margin: 3.1rem 0 3rem 0;
+    top: 0;
+
+    background: rgba(255, 255, 255, 0.5);
+        &__wrapper {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__title {
+                font-family: Georgia;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 3.2rem;
+                line-height: 110%;
+
+                letter-spacing: 0.06em;
+
+                margin-bottom: 0.280em;
+                color: $color-dark-l;
+            }
+        
+
+        &__subtitle {
+            font-family: Arial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+
+            letter-spacing: 0.1em;
+
+            margin-left: 0.3em;
+
+            color: $color-dark-3xl;
+        }
+        nav {
+            width: 36.9%;
+            padding-top: 1.07em;
+        }
+        &__ul {
+            width:100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            a {
+                font-family: Arial;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 1.5rem;
+                line-height: 160%;
+
+                color: $color-dark-l;
+            }
+            a:hover {
+                color: $color-dark-3xl;
+                cursor: url(../../assets/icons/cursor/Union-hover-light.png), pointer;
+            }
+        }
+}
+
+.action {
+    border-bottom: 3px solid $color-primary;
+    a {
+        color: $color-dark-3xl;
+    }
+}
+
+.pets {
+    padding: 8.1rem 0 0 0;
+    background: $color-light-l;
+
+        &__wrapper {
+        }
+
+        &__title {
+            text-align: center;
+        }
+        &__card-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            row-gap: 2.9rem;
+
+            margin-top: 5.9rem;
+        }
+}
+
+
+.card {
+    width: 27rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: $color-light-s;
+    border-radius: 9px;
+    
+    transition: .5s;
+    &:hover {
+        cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+        background: $color-light-xl;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+        transition: 0.5s;
+    }
+        &__img {
+            width: 100%;
+            img {
+                object-fit: cover;
+                width: 27rem;
+                height: 27rem;
+            }
+        }
+
+		&__name {
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2.0rem;
+            line-height: 2.3rem;
+            text-align: center;
+            letter-spacing: 0.06em;
+
+            color: $color-dark-l;
+
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+        }
+
+		&__button {
+            padding: 1.3rem 4.22rem;
+
+            border-radius: 100px;
+            border: 2px solid $color-primary;
+            background: $color-light-s;
+
+            margin-bottom: 1.8em;
+            
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.7rem;
+            line-height: 130%;
+
+            letter-spacing: 0.06em;
+
+            color: $color-dark-3xl;
+        }
+        &__button:hover {
+            cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+            border: 2px solid $color-primary-light;
+            background: $color-primary-light;
+        }
+}
+
+
+
+
+
+.footer {
+    padding: 3.8rem 0 0 0;
+    background: url(../../assets/images/noise_transparent@2x.png),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+
+    
+    a:hover {
+        cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+    }
+        &__wrapper {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+        }
+
+        &__content-wrapper {
+            width: 61.6%;
+
+            display: flex;
+            justify-content: space-between;
+
+            padding: 1.9rem 0 0 0;
+
+        }
+       
+		&__contact {
+            width: 30rem;
+
+            display: flex;
+            flex-flow: column nowrap;
+
+            h3 {
+                margin-bottom: 4.4rem;
+            }
+        }
+        &__map {
+            width: 30rem;
+
+            display: flex;
+            flex-flow: column nowrap;
+
+            h3 {
+                margin-bottom: 3.3rem;
+            }
+        }
+        &__title {
+            color: $color-light-xl;
+        }
+
+        &__email {
+            position: relative;
+            padding: 0 0 0 6rem;
+            margin-bottom: 4.9rem;
+        }
+        &__email::before {
+            position: absolute;
+            content: url(../../assets/icons/mail.png);
+            top: -.2rem;
+            left: 0;
+        }
+
+		&__number {
+            position: relative;
+            padding: 0 0 0 6rem;
+        }
+        &__number::before {
+            position: absolute;
+            content: url(../../assets/icons/phone.png);
+            top: -0.5rem;
+            left: 0;
+        }
+        
+		&__place-one {
+            position: relative;
+            padding: 0 0 0 4.1rem;
+            margin-bottom: 3.7rem;
+        }
+        &__place-one::before {
+            position: absolute;
+            content: url(../../assets/icons/pin.png);
+            top: 0.55rem;
+            left: -.1rem;
+        }
+
+        &__place-two {
+            position: relative;
+            padding: 0 0 0 4.1rem;
+        }
+        &__place-two::before {
+            position: absolute;
+            content: url(../../assets/icons/pin.png);
+            top: -.5rem;
+            left: -.1rem;
+        }
+
+        &__img-wrapper {
+            width: 30rem;
+            height: 100%;
+        }
+        &__img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__text {
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2rem;
+            line-height: 115%;
+
+            letter-spacing: 0.06em;
+
+            color: $color-primary;
+        }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        font-size: 12px;
+    }
+    .start-screen__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .start-screen__content {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        h2 {
+            margin: 0;
+            width: 100%;
+        }
+    }
+    .footer__wrapper {
+        flex-direction: column;
+    }
+    .footer__content-wrapper {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .footer__img-wrapper {
+        align-self: center;
+    }
+}

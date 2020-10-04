@@ -1,0 +1,311 @@
+@import "../main/normalize.css";
+:root {
+  font-size: 10px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h3 {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.5rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+h4 {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 125%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+h5 {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 3.1rem 0 3rem 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+.header__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header__title {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.2rem;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.28em;
+  color: #545454;
+}
+.header__subtitle {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+  margin-left: 0.3em;
+  color: #292929;
+}
+.header nav {
+  width: 36.9%;
+  padding-top: 1.07em;
+}
+.header__ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__ul a {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 160%;
+  color: #545454;
+}
+.header__ul a:hover {
+  color: #292929;
+  cursor: url(../../assets/icons/cursor/Union-hover-light.png), pointer;
+}
+
+.action {
+  border-bottom: 3px solid #F1CDB3;
+}
+.action a {
+  color: #292929;
+}
+
+.pets {
+  padding: 8.1rem 0 0 0;
+  background: #F6F6F6;
+}
+.pets__title {
+  text-align: center;
+}
+.pets__card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  row-gap: 2.9rem;
+  margin-top: 5.9rem;
+}
+
+.card {
+  width: 27rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FAFAFA;
+  border-radius: 9px;
+  transition: 0.5s;
+}
+.card:hover {
+  cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+  background: #FFFFFF;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+}
+.card__img {
+  width: 100%;
+}
+.card__img img {
+  object-fit: cover;
+  width: 27rem;
+  height: 27rem;
+}
+.card__name {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.card__button {
+  padding: 1.3rem 4.22rem;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  background: #FAFAFA;
+  margin-bottom: 1.8em;
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+}
+.card__button:hover {
+  cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+  border: 2px solid #FDDCC4;
+  background: #FDDCC4;
+}
+
+.footer {
+  padding: 3.8rem 0 0 0;
+  background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+}
+.footer a:hover {
+  cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+}
+.footer__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.footer__content-wrapper {
+  width: 61.6%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.9rem 0 0 0;
+}
+.footer__contact {
+  width: 30rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.footer__contact h3 {
+  margin-bottom: 4.4rem;
+}
+.footer__map {
+  width: 30rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.footer__map h3 {
+  margin-bottom: 3.3rem;
+}
+.footer__title {
+  color: #FFFFFF;
+}
+.footer__email {
+  position: relative;
+  padding: 0 0 0 6rem;
+  margin-bottom: 4.9rem;
+}
+.footer__email::before {
+  position: absolute;
+  content: url(../../assets/icons/mail.png);
+  top: -0.2rem;
+  left: 0;
+}
+.footer__number {
+  position: relative;
+  padding: 0 0 0 6rem;
+}
+.footer__number::before {
+  position: absolute;
+  content: url(../../assets/icons/phone.png);
+  top: -0.5rem;
+  left: 0;
+}
+.footer__place-one {
+  position: relative;
+  padding: 0 0 0 4.1rem;
+  margin-bottom: 3.7rem;
+}
+.footer__place-one::before {
+  position: absolute;
+  content: url(../../assets/icons/pin.png);
+  top: 0.55rem;
+  left: -0.1rem;
+}
+.footer__place-two {
+  position: relative;
+  padding: 0 0 0 4.1rem;
+}
+.footer__place-two::before {
+  position: absolute;
+  content: url(../../assets/icons/pin.png);
+  top: -0.5rem;
+  left: -0.1rem;
+}
+.footer__img-wrapper {
+  width: 30rem;
+  height: 100%;
+}
+.footer__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.footer__text {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .start-screen__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .start-screen__content {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .start-screen__content h2 {
+    margin: 0;
+    width: 100%;
+  }
+
+  .footer__wrapper {
+    flex-direction: column;
+  }
+
+  .footer__content-wrapper {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .footer__img-wrapper {
+    align-self: center;
+  }
+}
