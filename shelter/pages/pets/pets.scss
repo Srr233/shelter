@@ -30,7 +30,7 @@ h3 {
     font-family: Georgia;
     font-style: normal;
     font-weight: normal;
-    font-size: 3.5rem;
+    font-size: 35px;
     line-height: 130%;
 
     letter-spacing: 0.06em;
@@ -60,8 +60,10 @@ h5 {
     color: $color-dark-l;
 }
 .header {
-    position: sticky;
-    margin: 3.1rem 0 3rem 0;
+    width: 100%;
+
+    position: fixed;
+    padding: 31px 0 0 0;
     top: 0;
 
     background: rgba(255, 255, 255, 0.5);
@@ -76,7 +78,7 @@ h5 {
                 font-family: Georgia;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 3.2rem;
+                font-size: 32px;
                 line-height: 110%;
 
                 letter-spacing: 0.06em;
@@ -90,8 +92,8 @@ h5 {
             font-family: Arial;
             font-style: normal;
             font-weight: normal;
-            font-size: 1.3rem;
-            line-height: 1.5rem;
+            font-size: 13px;
+            line-height: 15px;
 
             letter-spacing: 0.1em;
 
@@ -100,9 +102,36 @@ h5 {
             color: $color-dark-3xl;
         }
         nav {
-            width: 36.9%;
-            padding-top: 1.07em;
+            width: 442.7px;
+            padding-top: 14px;
         }
+        &__burger {
+            width: 30px;
+            height: 30px;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: transparent;
+
+            span {
+                background-color: #000000;
+                height: 2px;
+                width: 31px;
+
+                border-radius: 100px;
+            }
+            span:nth-child(2) {
+                margin: 8px 0;
+            }
+            transition: 0.5s;
+        }
+        &__burger:active span {
+            transition: .5s;
+            transform: rotate(-45deg);
+        }
+       
         &__ul {
             width:100%;
 
@@ -114,7 +143,7 @@ h5 {
                 font-family: Arial;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 1.5rem;
+                font-size: 15px;
                 line-height: 160%;
 
                 color: $color-dark-l;
@@ -132,12 +161,23 @@ h5 {
         color: $color-dark-3xl;
     }
 }
+@mixin bttn-pets ($width, $height, $color: $color-dark-s, $bd: 2px solid $color-dark-s ) {
+    border: $bd;
+    background: $color-light-l;
+    color: $color;
 
+    border-radius: 100px;
+    padding: $width $height;
+}
 .pets {
-    padding: 8.1rem 0 0 0;
+    padding: 81px 0 0 0;
+    margin-top: 120px;
     background: $color-light-l;
 
         &__wrapper {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
         }
 
         &__title {
@@ -145,17 +185,61 @@ h5 {
         }
         &__card-wrapper {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             flex-flow: row wrap;
-            row-gap: 2.9rem;
+            row-gap: 29px;
+            column-gap: 40px;
+            margin-top: 59px;
+        }
 
-            margin-top: 5.9rem;
+        
+		&__navigation {
+            width: 34rem;
+
+            padding: 60px 0 100px 0;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2.0rem;
+            line-height: 115%;
+
+            text-align: center;
+            letter-spacing: 0.06em;
+
+                button {
+                    font-size: 2rem;
+                }
+            }
+
+		&__left-arrow {
+            @include bttn-pets(12px, 12px);
+           
+        }
+        &__left-arrow--bigger {
+            @include bttn-pets(13px, 18px);
+        }
+
+        &__navigation-number {
+            background: $color-primary;
+            border-radius: 100px;
+            padding: 14px 21px;
+        }
+
+        &__right-arrow {
+            @include bttn-pets(12px, 12px, #000000, 2px solid $color-primary);
+        }
+        &__right-arrow--bigger {
+            @include bttn-pets(13px, 18px, #000000, 2px solid $color-primary);
         }
 }
 
 
 .card {
-    width: 27rem;
+    width: 270px;
 
     display: flex;
     flex-direction: column;
@@ -175,8 +259,8 @@ h5 {
             width: 100%;
             img {
                 object-fit: cover;
-                width: 27rem;
-                height: 27rem;
+                width: 100%;
+                height: 100%;
             }
         }
 
@@ -184,7 +268,7 @@ h5 {
             font-family: Georgia;
             font-style: normal;
             font-weight: normal;
-            font-size: 2.0rem;
+            font-size: 20px;
             line-height: 2.3rem;
             text-align: center;
             letter-spacing: 0.06em;
@@ -207,7 +291,7 @@ h5 {
             font-family: Georgia;
             font-style: normal;
             font-weight: normal;
-            font-size: 1.7rem;
+            font-size: 17px;
             line-height: 130%;
 
             letter-spacing: 0.06em;
@@ -223,10 +307,8 @@ h5 {
 
 
 
-
-
 .footer {
-    padding: 3.8rem 0 0 0;
+    padding: 38px 0 0 0;
     background: url(../../assets/images/noise_transparent@2x.png),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 
@@ -345,11 +427,17 @@ h5 {
         }
 }
 
-@media (max-width: 1024px) {
-    :root {
-        font-size: 12px;
+
+@media (max-width: 1228px) {
+    .pets__card-wrapper {
+        article:nth-last-child(1) {
+            display: none;
+            }
+        article:nth-last-child(2) {
+            display: none;
+        }
     }
-    .start-screen__wrapper {
+     .start-screen__wrapper {
         flex-direction: column;
         align-items: center;
     }
@@ -369,8 +457,124 @@ h5 {
     .footer__content-wrapper {
         width: 100%;
         justify-content: space-evenly;
+        padding: 20px 0 63.5px 0;
     }
     .footer__img-wrapper {
         align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 30.5px;
+    }
+    .pets {
+        padding: 72px 0 0 0;
+
+        &__card-wrapper {
+            column-gap: 39px;
+            margin-top: 39px;
+            justify-content: center;
+
+            article:nth-last-child(1) {
+                display: none;
+            }
+            article:nth-last-child(2) {
+                display: none;
+            }
+        }
+        &__navigation {
+            padding: 37px 0 79px 0;
+        }
+    }
+    .footer {
+        margin-top: 0;
+        padding: 11px 0 0 0;
+
+        &__content-wrapper {
+            padding: 20px 0 63.5px 0;
+        }
+    }
+}
+
+@media (max-width: 690px) {
+    .container {
+        padding: 0 10px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    .header {
+        &__wrapper {
+            nav {
+                width: 71px;
+                margin-top: 0;
+            }
+        }
+        &__burger {
+            display: flex;
+            margin-top: 4px;
+        }
+        &__ul {
+            display: none;
+            position: absolute;
+            top: 50px;
+        }
+    }
+    .pets {
+        padding: 40px 0 0 0;
+
+        &__wrapper {
+            h3:nth-child(2) {
+                margin: 0 0 10px 0;
+            }
+        }
+        &__card-wrapper {
+            row-gap: 29.5px;
+
+            article:nth-child(2) {
+                display:none;
+            }
+            article:nth-last-child(1) {
+                display: none;
+            }
+            article:nth-last-child(2) {
+                display: none;
+            }
+            article:nth-last-child(3) {
+                display: none;
+            }
+            article:nth-last-child(5) {
+                display: none;
+            }
+        }
+        &__navigation {
+            width: 300px;
+
+            padding: 28px 0 31.7px 0;
+        }
+    }
+    .footer {
+        &__content-wrapper {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        &__contact {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            margin-bottom: 45px;
+            a {
+                width: 278px;
+            }
+        }
+        &__map {
+            
+        }
+        h3 {
+            text-align: center;
+            font-size: 35px;
+        }
     }
 }
