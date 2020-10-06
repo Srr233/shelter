@@ -454,8 +454,7 @@ h5 {
     height: 100vh;
     position: fixed;
     top: 123px;
-    right: 0;
-    transform: translate(100%);
+    right: -100%;
     transition: 0.5s;
     display: flex;
     flex-direction: column;
@@ -463,6 +462,7 @@ h5 {
     background: rgba(0, 0, 0, 0.63);
   }
   .header__wrapper nav.active {
+    right: 0;
     transform: translate(0);
   }
   .header__burger {

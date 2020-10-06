@@ -532,9 +532,9 @@ h5 {
                 position: fixed;
 
                 top: 123px;
-                right: 0;
+                right: -100%;
 
-                transform: translate(100%);
+                
                 transition: .5s;
 
                 display: flex;
@@ -543,6 +543,7 @@ h5 {
                 background: rgba(0, 0, 0, 0.63);
             }
             nav.active {
+                right: 0;
                 transform: translate(0);
             }
         }
