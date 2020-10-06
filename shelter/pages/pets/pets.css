@@ -493,7 +493,17 @@ h5 {
   }
   .header__ul li > a {
     font-size: 37px;
+    letter-spacing: -0.5em;
+    opacity: 0;
     color: #fff;
+    transition: 1s;
+  }
+  .header__ul li > a.active {
+    letter-spacing: 0.06em;
+    opacity: 1;
+  }
+  .header__ul li > a:hover {
+    color: #f1cdb3;
   }
 
   .pets {

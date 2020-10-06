@@ -581,7 +581,18 @@ h5 {
             }
             li > a {
                 font-size: 37px;
+                letter-spacing: -0.5em;
+                opacity: 0;
                 color: #fff;
+
+                transition: 1s;
+            }
+            li > a.active {
+                letter-spacing: 0.06em;
+                opacity: 1;
+            }
+            li > a:hover {
+                color: rgba($color: $color-primary, $alpha: 1);
             }
         }
     }
