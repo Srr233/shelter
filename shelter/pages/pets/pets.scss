@@ -60,24 +60,6 @@ h5 {
     color: $color-dark-l;
 }
 
-@keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-  }
-}
-@keyframes X-burger {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-45deg);
-    }
-}
 
 .header {
     width: 100%;
@@ -246,13 +228,13 @@ h5 {
                     font-size: 2rem;
                 }
             }
-
 		&__left-arrow {
             @include bttn-pets(12px, 12px);
-           
+           cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
         }
         &__left-arrow--bigger {
             @include bttn-pets(13px, 18px);
+            cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
         }
 
         &__navigation-number {
@@ -263,12 +245,17 @@ h5 {
 
         &__right-arrow {
             @include bttn-pets(12px, 12px, #000000, 2px solid $color-primary);
+            cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
         }
         &__right-arrow--bigger {
             @include bttn-pets(13px, 18px, #000000, 2px solid $color-primary);
+            cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
         }
 }
-
+.btn-change:hover {
+    border-color: $color-primary-light;
+    background: $color-primary-light;
+}
 
 .card {
     width: 270px;
