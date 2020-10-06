@@ -59,6 +59,26 @@ h5 {
 
     color: $color-dark-l;
 }
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+@keyframes X-burger {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
 .header {
     width: 100%;
 
@@ -109,10 +129,15 @@ h5 {
             width: 30px;
             height: 30px;
 
+            position: absolute;
+
             display: none;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            margin-top: 3px;
+            right: 51px;
+            top: 42px;
             background-color: transparent;
 
             span {
@@ -125,13 +150,20 @@ h5 {
             span:nth-child(2) {
                 margin: 8px 0;
             }
-            transition: 0.5s;
-        }
-        &__burger:active span {
             transition: .5s;
-            transform: rotate(-45deg);
         }
-       
+        &__burger span {
+
+        }
+        .burger-toggle {
+            animation: X-burger .5s;
+            animation-fill-mode: forwards;
+        }
+        .burger-toggle-reverse {
+            animation: X-burger .5s;
+            animation-direction: reverse;
+            
+        }
         &__ul {
             width:100%;
 
@@ -507,18 +539,50 @@ h5 {
     .header {
         &__wrapper {
             nav {
-                width: 71px;
-                margin-top: 0;
+                width: 100%;
+                height: 100vh;
+
+                position: fixed;
+
+                top: 123px;
+                right: 0;
+
+                transform: translate(100%);
+                transition: .5s;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.63);
+            }
+            nav.active {
+                transform: translate(0);
             }
         }
         &__burger {
             display: flex;
-            margin-top: 4px;
+
+            span {
+                transform: rotate(0);
+                transition: .5s;
+            }
+            span.active {
+                transform: rotate(-45deg);
+            }
         }
         &__ul {
-            display: none;
-            position: absolute;
-            top: 50px;
+            width: auto;
+            margin-top: 137px;
+            flex-direction: column;
+            align-items: center;
+
+            li {
+                padding: 10px 0;
+            }
+            li > a {
+                font-size: 37px;
+                color: #fff;
+            }
         }
     }
     .pets {
