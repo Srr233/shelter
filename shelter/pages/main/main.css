@@ -75,7 +75,7 @@ h5 {
   color: #FFFFFF;
 }
 .header nav {
-  width: 36.9%;
+  width: 442px;
   padding-top: 1.07em;
 }
 .header__ul {
@@ -115,8 +115,8 @@ h5 {
   justify-content: space-between;
 }
 .start-screen__content {
-  padding-bottom: 8rem;
-  width: 39%;
+  padding-bottom: 80px;
+  width: 460px;
 }
 .start-screen__title {
   width: 80%;
@@ -203,8 +203,10 @@ h5 {
   justify-content: space-between;
   padding-top: 4.2em;
 }
-.our-friends__slider-container .card:nth-child(3) {
-  margin: 0 6.4em 0 6.45em;
+.our-friends__slider {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 90px;
 }
 .our-friends__arrow {
   display: flex;
@@ -219,12 +221,6 @@ h5 {
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
   cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
-}
-.our-friends__arrow-left {
-  margin-right: 4em;
-}
-.our-friends__arrow-right {
-  margin-left: 4em;
 }
 .our-friends__button {
   padding: 0.9em 2.6em;
@@ -499,19 +495,13 @@ h5 {
   color: #F1CDB3;
 }
 
-@media (max-width: 1024px) {
-  :root {
-    font-size: 12px;
-  }
-
+@media (max-width: 1228px) {
   .start-screen__wrapper {
     flex-direction: column;
     align-items: center;
   }
 
   .start-screen__content {
-    width: 100%;
-    text-align: center;
     margin: 0;
     padding: 0;
   }
@@ -531,5 +521,130 @@ h5 {
 
   .footer__img-wrapper {
     align-self: center;
+  }
+}
+@media (max-width: 1126px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .header__wrapper {
+    width: 92.1%;
+    top: 31px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .start-screen {
+    padding-top: 151px;
+  }
+  .start-screen__content {
+    margin: 0 0 99px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .start-screen__content h2 {
+    width: 310px;
+    padding-bottom: 42px;
+  }
+  .start-screen__button {
+    margin: 0 126px;
+  }
+  .start-screen__img-container {
+    width: 570px;
+    align-self: flex-end;
+  }
+  .start-screen__img-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .about {
+    padding-top: 81px;
+  }
+  .about__content {
+    width: 436px;
+  }
+  .about__wrapper {
+    flex-direction: column;
+    column-gap: 0;
+  }
+  .about__title {
+    padding-right: 25px;
+  }
+  .about__img-container {
+    order: 2;
+    margin-top: 80px;
+  }
+
+  .our-friends__slider {
+    column-gap: 40px;
+  }
+  .our-friends__slider article:nth-child(3) {
+    display: none;
+  }
+  .our-friends__button {
+    margin: 59px 0 5.87em 0;
+  }
+
+  .help__title {
+    width: 50%;
+  }
+  .help__how {
+    width: 100%;
+    display: grid;
+    row-gap: 56px;
+    grid-template-columns: 1fr 0.85fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 60px;
+  }
+  .help__how figure:nth-child(2) div {
+    width: 90%;
+  }
+  .help__how figure {
+    margin: 0;
+  }
+
+  .in-addition {
+    padding: 80px 0 100px 0;
+  }
+  .in-addition__wrapper {
+    align-items: center;
+    flex-direction: column;
+  }
+  .in-addition__img-wrapper {
+    width: 71.5%;
+    order: 2;
+  }
+  .in-addition__content {
+    width: 382px;
+    margin: 0 0 58px 2px;
+  }
+  .in-addition__title {
+    width: 83%;
+    margin: 0;
+  }
+  .in-addition__subtitle {
+    padding: 20px 0 20px 0;
+  }
+  .in-addition__card-bank-wrapper {
+    width: 91.3%;
+    padding: 0.67em 1em;
+  }
+
+  .footer {
+    padding: 31px 0 0 0;
+  }
+  .footer__wrapper {
+    align-items: center;
+  }
+  .footer__content-wrapper {
+    width: 90.2%;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 67px;
   }
 }

@@ -104,7 +104,7 @@ h5 {
             color: $color-light-xl;
         }
         nav {
-            width: 36.9%;
+            width: 442px;
             padding-top: 1.07em;
         }
         &__ul {
@@ -149,8 +149,8 @@ h5 {
         }
 
 		&__content {
-            padding-bottom: 8rem;
-            width: 39%;
+            padding-bottom: 80px;
+            width: 460px;
         }
 
 		&__title {
@@ -265,10 +265,11 @@ h5 {
             align-items: center;
             justify-content: space-between;
             padding-top: 4.2em;
-
-            .card:nth-child(3) {
-                margin: 0 6.40em 0 6.45em;
-            }
+        }
+        &__slider {
+            display: flex;
+            flex-flow: row wrap;
+            column-gap: 90px;
         }
         &__arrow {
             display: flex;
@@ -285,13 +286,6 @@ h5 {
             background: $color-primary-light;
             border: 2px solid $color-primary-light;
             cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
-        }
-		&__arrow-left {
-            margin-right: 4em;
-        }
-
-		&__arrow-right {
-            margin-left: 4em;
         }
 
 		&__button {
@@ -642,17 +636,12 @@ h5 {
         }
 }
 
-@media (max-width: 1024px) {
-    :root {
-        font-size: 12px;
-    }
+@media (max-width: 1228px) {
     .start-screen__wrapper {
         flex-direction: column;
         align-items: center;
     }
     .start-screen__content {
-        width: 100%;
-        text-align: center;
         margin: 0;
         padding: 0;
         h2 {
@@ -669,5 +658,137 @@ h5 {
     }
     .footer__img-wrapper {
         align-self: center;
+    }
+}
+
+@media (max-width: 1126px) {
+    .container {
+        padding: 0 30px;
+    }
+    .header__wrapper {
+        width: 92.1%;
+        top: 31px;
+        position: absolute;
+        
+        display: flex;
+        justify-content: space-between;
+    }
+    .start-screen {
+        padding-top: 151px;
+
+        &__content {
+            margin: 0 0 99px 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            h2 {
+                width: 310px;
+                padding-bottom: 42px;
+            }
+        }
+        &__button {
+            margin: 0 126px;
+        }
+        &__img-container {
+        width: 570px;
+        align-self: flex-end;
+            img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            }
+        }
+    }
+    .about {
+        padding-top: 81px;
+        &__content {
+            width: 436px;
+        }
+        &__wrapper {
+            flex-direction: column;
+            column-gap: 0;
+        }
+        &__title {
+            padding-right: 25px;
+        }
+        &__img-container {
+            order: 2;
+            margin-top: 80px;
+        }
+    }
+    .our-friends {
+        &__slider {
+            column-gap: 40px;
+            article:nth-child(3) {
+                display: none;
+            }
+        }
+        &__button {
+            margin: 59px 0 5.87em 0;
+        }
+    }
+    .help {
+        &__title {
+            width: 50%;
+        }
+        &__how {
+            width: 100%;
+            display: grid;
+            row-gap: 56px;
+            grid-template-columns: 1fr 0.85fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            margin-top: 60px;
+
+            figure:nth-child(2) {
+                div {
+                    width: 90%;
+                }
+            }
+        }
+        &__how figure {
+            margin: 0;
+        }
+    }
+    .in-addition {
+        padding: 80px 0 100px 0;
+        &__wrapper {
+            align-items: center;
+            flex-direction: column;
+        }
+        &__img-wrapper {
+            width: 71.5%;
+
+            order: 2;
+        }
+        &__content {
+            width: 382px;
+            margin:0 0 58px 2px;
+        }
+        &__title {
+            width: 83%;
+            margin: 0;
+        }
+        &__subtitle {
+            padding: 20px 0 20px 0;
+        }
+        &__card-bank-wrapper {
+            width: 91.3%;
+            padding: 0.67em 1em;
+        }
+    }
+    .footer {
+        padding: 31px 0 0 0 ;
+
+        &__wrapper {
+            align-items: center;
+        }
+        &__content-wrapper {
+            width: 90.2%;
+
+            justify-content: space-between;
+
+            padding: 0;
+            margin-bottom: 67px;
+        }
     }
 }
