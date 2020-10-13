@@ -103,7 +103,7 @@ h5 {
 
             color: $color-light-xl;
         }
-        nav {
+        &__nav {
             width: 442px;
             padding-top: 1.07em;
         }
@@ -127,6 +127,33 @@ h5 {
                 color: $color-light-xl;
                 cursor: url(../../assets/icons/cursor/Union-hover-light.png), pointer;
             }
+        }
+        &__burger {
+            width: 30px;
+            height: 30px;
+
+            position: absolute;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 3px;
+            right: 38px;
+            top: 12px;
+            background-color: transparent;
+
+            span {
+                background-color: $color-primary;
+                height: 2px;
+                width: 31px;
+
+                border-radius: 100px;
+            }
+            span:nth-child(2) {
+                margin: 8px 0;
+            }
+            transition: .5s;
         }
 }
 
@@ -790,5 +817,255 @@ h5 {
             padding: 0;
             margin-bottom: 67px;
         }
+    }
+}
+
+@media (max-width: 690px) {
+    .container {
+        padding: 0 10px;
+    }
+    .header {
+        &__wrapper {
+            position: fixed;
+            nav.active {
+                right: 0;
+                transform: translate(0);
+            }
+        }
+        &__nav {
+                width: 100%;
+                height: 100vh;
+
+                position: fixed;
+
+                top: 123px;
+                right: -100%;
+
+                
+                transition: .5s;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.63);
+
+        }
+        &__burger {
+            display: flex;
+
+            span {
+                transform: rotate(0);
+                transition: .5s;
+            }
+            span.active {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .start-screen {
+
+        &__content {
+            margin: 0 0 105px 0;
+            width: 307px;
+
+            h2 {
+                width: 306px;
+            }
+        }
+        &__title {
+            text-align: center;
+            font-size: 27px;
+            letter-spacing: 0.5px;
+            line-height: 119%;
+        }
+        &__subtitle {
+            text-align: center;
+            width: 306px;
+        }
+        &__button {
+            margin: 0 49px;
+        }
+        &__img-container {
+            width: 260px;
+        }
+    }
+    .about {
+        padding: 43px 0 40px 0;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 318px;
+        }
+        &__title {
+            text-align: center;
+            padding: 0 0 25px 0;
+            font-size: 27px;
+            width: 318px;
+            letter-spacing: 0.84px;
+            line-height: 122%;
+        }
+        &__subtitle-one {
+            text-align: justify;
+            width: 270px;
+            padding-bottom: 22px;
+        }
+        &__subtitle {
+            text-align: justify;
+            width: 270px;
+        }
+        &__img-container {
+            width: 260px;
+            margin-top: 41px;
+            img {
+                object-fit: contain;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+.our-friends {
+        padding: 44px 0 0 0;
+
+        &__title {
+            font-size: 25px;
+        }
+        &__title1 {
+            font-size: 25px;
+        }
+        &__slider-container {
+            flex-flow: row wrap;
+            padding: 42px 0 0 0;
+            justify-content: center;
+            column-gap: 80px;
+        }
+        &__slider {
+            order: 1;
+            width: 100%;
+            justify-content: center;
+            article:nth-child(2) {
+                display:none;
+            }
+            article {
+                margin-bottom: 20px;
+            }
+        }
+        &__arrow-left {
+            order: 2;
+        }
+        &__arrow-right {
+            order: 3;
+        }
+        &__button {
+            margin: 41px 0 41px 0;
+        }
+}
+.help {
+    &__wrapper {
+        margin-bottom: 41px;
+    }
+    &__title {
+        width: 85%;
+        margin-top: 42px;
+        font-size: 25px;
+    }
+    &__how {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 21px;
+        row-gap: 30px;
+        margin-top: 44px;
+        figure {
+            align-items: center;
+            div {
+                width: 50px;
+                margin: 0 0 13px 0;
+                img {
+                    object-fit: contain;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            figcaption {
+                font-size: 15px;
+            }
+        }
+        figure:nth-child(1) div {
+            width: 39px;
+        }
+        figure:nth-child(2) div {
+            width: 50px;
+        }
+         figure:nth-child(5) div {
+            width: 30px;
+        }
+        figure:nth-child(7) div {
+            margin: 0 0 22px 0;
+        }
+         figure:nth-child(9) div {
+            margin: 0 0 17px 0;
+        }
+    }
+}
+.in-addition {
+    padding: 43px 0;
+    &__content {
+        width: 290px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin: 0 0 40.5px 0;
+        h3 {
+            text-align: center;
+            font-size: 25px;
+        }
+    }
+    &__img-wrapper {
+        width: 87.5%;
+    }
+    &__title {
+        width: 320px;
+    }
+    &__subtitle {
+        font-size: 14px;
+        padding: 25px 0;
+        letter-spacing: 0.5px;
+    }
+    &__card-bank-wrapper {
+        width: 279.5px;
+    }
+    &__card-number {
+        font-size: 15px;
+    }
+    &__info-text {
+        text-align: justify;
+        width: 280px;
+    }
+}
+.footer {
+    &__content-wrapper {
+        width: 100%;
+        flex-direction: column;
+        row-gap: 44px;
+        margin-bottom: 94px;
+
+        div {
+            align-items: center;
+            h3 {
+                text-align: center;
+            }
+            a {
+                width: 280px;
+            }
+        }
+        div:nth-child(2) {
+            a {
+                width: 299px;
+            }
+        }
+    }
+    &__img-wrapper {
+        width: 260px;
     }
 }

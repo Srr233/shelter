@@ -134,18 +134,6 @@ h5 {
             }
             transition: .5s;
         }
-        &__burger span {
-
-        }
-        .burger-toggle {
-            animation: X-burger .5s;
-            animation-fill-mode: forwards;
-        }
-        .burger-toggle-reverse {
-            animation: X-burger .5s;
-            animation-direction: reverse;
-            
-        }
         &__ul {
             width:100%;
 
