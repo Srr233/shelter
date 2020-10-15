@@ -695,6 +695,29 @@ h5 {
     align-items: center;
     background: rgba(0, 0, 0, 0.63);
   }
+  .header__ul {
+    width: auto;
+    margin-top: 137px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__ul li {
+    padding: 10px 0;
+  }
+  .header__ul li > a {
+    font-size: 35px;
+    letter-spacing: -0.5em;
+    opacity: 0;
+    color: #fff;
+    transition: 1s;
+  }
+  .header__ul li > a.active {
+    letter-spacing: 0.06em;
+    opacity: 1;
+  }
+  .header__ul li > a:hover {
+    color: #f1cdb3;
+  }
   .header__burger {
     display: flex;
   }
