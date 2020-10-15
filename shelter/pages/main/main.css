@@ -53,6 +53,13 @@ h5 {
   width: 97.5%;
   display: flex;
   justify-content: space-between;
+  background-color: transparent;
+  transition: 0.5s;
+}
+.header__wrapper.top {
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
 }
 .header__title {
   font-family: Georgia;
@@ -554,7 +561,7 @@ h5 {
   .header__wrapper {
     width: 92.1%;
     top: 31px;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-between;
   }
@@ -671,7 +678,7 @@ h5 {
     margin-bottom: 67px;
   }
 }
-@media (max-width: 690px) {
+@media (max-width: 760px) {
   .container {
     padding: 0 10px;
   }
