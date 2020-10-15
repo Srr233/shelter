@@ -682,6 +682,7 @@ h5 {
             width: 100%;
         }
     }
+
     .footer__wrapper {
         flex-direction: column;
     }
@@ -954,8 +955,7 @@ h5 {
             }
         }
     }
-}
-.our-friends {
+    .our-friends {
         padding: 44px 0 0 0;
 
         &__title {
@@ -1098,4 +1098,5 @@ h5 {
     &__img-wrapper {
         width: 260px;
     }
+}
 }
