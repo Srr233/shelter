@@ -18,10 +18,11 @@ window.addEventListener('scroll', function() {
   }
 });
 
-
+//--------------------------------------------------------------------------
 
 const pets = [
     {
+        "id" : "0",
         "name": "Katrine",
         "img": "../../assets/images/cat-1-3.jpg",
         "type": "Cat",
@@ -33,6 +34,7 @@ const pets = [
         "parasites": ["none"]
     },
     {
+        "id": "1",
         "name": "Jennifer",
         "img": "../../assets/images/puppy-2-3.jpg",
         "type": "Dog",
@@ -44,6 +46,7 @@ const pets = [
         "parasites": ["none"]
     },
     {
+        "id": "2",
         "name": "Woody",
         "img": "../../assets/images/dog-3-3.jpg",
         "type": "Dog",
@@ -55,6 +58,7 @@ const pets = [
         "parasites": ["none"]
     },
     {
+        "id": "3",
         "name": "Sophia",
         "img": "../../assets/images/pets-sofia.jpg",
         "type": "Dog",
@@ -66,6 +70,7 @@ const pets = [
         "parasites": ["none"]
     },
     {
+        "id": "4",
         "name": "Timmy",
         "img": "../../assets/images/pets-timmy.jpg",
         "type": "Cat",
@@ -77,6 +82,7 @@ const pets = [
         "parasites": ["none"]
     },
     {
+        "id": "5",
         "name": "Charly",
         "img": "../../assets/images/pets-charly.jpg",
         "type": "Dog",
@@ -88,6 +94,7 @@ const pets = [
         "parasites": ["lice", "fleas"]
     },
     {
+        "id": "6",
         "name": "Scarlett",
         "img": "../../assets/images/pets-scarlet.jpg",
         "type": "Dog",
@@ -99,6 +106,7 @@ const pets = [
         "parasites": ["none"]
     },
     {
+        "id": "7",
         "name": "Freddie",
         "img": "../../assets/images/pets-freddie.jpg",
         "type": "Cat",
@@ -121,6 +129,8 @@ rightArrow.addEventListener('click', sliceCard);
 function createCardPetDocument (infoPet) {
     const card = document.createElement('article');
     card.classList.add('card');
+    card.dataset.id = infoPet.id;
+    card.addEventListener('click', showPetCard);
     const cardImgDiv = document.createElement('div');
     cardImgDiv.classList.add('card__img');
     const cardImg = document.createElement('img');
@@ -171,6 +181,16 @@ function addPetsDom (direction, index) {
                 slider.append(petsDOM[index - i]);
             }
         }
+
+        for (let i = 0; i < sliderChildren.length; i++) {
+            sliderChildren[i].classList.add('slide');
+        }
+
+        setTimeout(() => {
+            for (let i = 0; i < sliderChildren.length; i++) {
+                sliderChildren[i].classList.remove('slide');
+            }
+        })
     } else {
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
@@ -196,18 +216,36 @@ function sliceCard(e) {
     const children = slider.children;
     
     if (buttonTarget.classList.contains('our-friends__arrow-left')) {
-        if (children[0] === petsDOM[0]) {
+        if (children[0] === petsDOM[1]) {
             buttonTarget.setAttribute('disabled', true);
+            buttonTarget.classList.add('disabled');
+            addPetsDom('left', petsDOM.indexOf(children[0]));
         } else {
             document.querySelector('.our-friends__arrow-right').removeAttribute('disabled');
+            document.querySelector('.our-friends__arrow-right').classList.remove('disabled');
             addPetsDom('left', petsDOM.indexOf(children[0]));
         }
     } else {
-        if (petsDOM.indexOf(children[children.length - 1]) === petsDOM.length - 1) {
+        if (children[children.length - 1] === petsDOM[petsDOM.length - 2]) {
             buttonTarget.setAttribute('disabled', true);
+            buttonTarget.classList.add('disabled');
+            addPetsDom('right', petsDOM.indexOf(children[children.length - 1]));
         } else {
             document.querySelector('.our-friends__arrow-left').removeAttribute('disabled');
+            document.querySelector('.our-friends__arrow-left').classList.remove('disabled');
+
             addPetsDom('right', petsDOM.indexOf(children[children.length - 1]));
         }
     }
+}
+
+//--------------------------------------------------------------------------
+
+function showPetCard(petDOM) {
+    petDOM = petDOM.target;
+    while (petDOM.tagName !== 'ARTICLE'|| petDOM.tagName !== 'ARTICLE') {
+        petDOM = petDOM.parentElement;
+    }
+    const specific = pets.find(item => item.id === petDOM.dataset.id);
+    console.log(specific);
 }

@@ -61,11 +61,11 @@ h5 {
 }
 
 .header {
-
         .container {
             position: relative;
         }
         &__wrapper {
+            z-index: 50;
             position: absolute;
             top: 6.1rem;
 
@@ -303,6 +303,8 @@ h5 {
             display: flex;
             flex-flow: row wrap;
             column-gap: 90px;
+            
+            transition: .5s;
         }
         &__arrow {
             display: flex;
@@ -319,6 +321,11 @@ h5 {
             background: $color-primary-light;
             border: 2px solid $color-primary-light;
             cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+        }
+        &__arrow.disabled {
+            background-color: $color-light-l;
+            color: $color-dark-m;
+            border-color: $color-dark-m;
         }
 
 		&__button {
@@ -352,6 +359,7 @@ h5 {
     background: $color-light-s;
     border-radius: 9px;
     
+    transform: scale(1);
     transition: .5s;
     &:hover {
         cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
@@ -407,6 +415,10 @@ h5 {
             border: 2px solid $color-primary-light;
             background: $color-primary-light;
         }
+}
+.card.slide {
+    transform: scale(0);
+    transition: .5s;
 }
 
 .help {

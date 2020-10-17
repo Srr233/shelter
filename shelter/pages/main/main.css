@@ -48,6 +48,7 @@ h5 {
   position: relative;
 }
 .header__wrapper {
+  z-index: 50;
   position: absolute;
   top: 6.1rem;
   width: 97.5%;
@@ -237,6 +238,7 @@ h5 {
   display: flex;
   flex-flow: row wrap;
   column-gap: 90px;
+  transition: 0.5s;
 }
 .our-friends__arrow {
   display: flex;
@@ -251,6 +253,11 @@ h5 {
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
   cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+}
+.our-friends__arrow.disabled {
+  background-color: #F6F6F6;
+  color: #B2B2B2;
+  border-color: #B2B2B2;
 }
 .our-friends__button {
   padding: 0.9em 2.6em;
@@ -276,6 +283,7 @@ h5 {
   align-items: center;
   background: #FAFAFA;
   border-radius: 9px;
+  transform: scale(1);
   transition: 0.5s;
 }
 .card:hover {
@@ -322,6 +330,11 @@ h5 {
   cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
   border: 2px solid #FDDCC4;
   background: #FDDCC4;
+}
+
+.card.slide {
+  transform: scale(0);
+  transition: 0.5s;
 }
 
 .help__wrapper {
