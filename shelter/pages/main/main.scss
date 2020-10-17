@@ -753,9 +753,6 @@ h5 {
     .our-friends {
         &__slider {
             column-gap: 40px;
-            article:nth-child(3) {
-                display: none;
-            }
         }
         &__button {
             margin: 59px 0 5.87em 0;
@@ -974,9 +971,6 @@ h5 {
             order: 1;
             width: 100%;
             justify-content: center;
-            article:nth-child(2) {
-                display:none;
-            }
             article {
                 margin-bottom: 20px;
             }

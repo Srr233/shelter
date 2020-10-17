@@ -613,9 +613,6 @@ h5 {
   .our-friends__slider {
     column-gap: 40px;
   }
-  .our-friends__slider article:nth-child(3) {
-    display: none;
-  }
   .our-friends__button {
     margin: 59px 0 5.87em 0;
   }
@@ -815,9 +812,6 @@ h5 {
     order: 1;
     width: 100%;
     justify-content: center;
-  }
-  .our-friends__slider article:nth-child(2) {
-    display: none;
   }
   .our-friends__slider article {
     margin-bottom: 20px;
