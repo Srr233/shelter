@@ -247,5 +247,40 @@ function showPetCard(petDOM) {
         petDOM = petDOM.parentElement;
     }
     const specific = pets.find(item => item.id === petDOM.dataset.id);
-    console.log(specific);
+    
+    document.querySelector('main').append(getLearnMoreCard(specific));
+    setTimeout(() => document.querySelector('.modal__card').classList.remove('modal-animation'), 10);
+}
+
+function getLearnMoreCard (infoPet) {
+    const modalWrapper = document.createElement('div');
+
+    modalWrapper.insertAdjacentHTML('afterbegin', `<div class="modal__card modal-animation">
+            <div class="modal__img-wrapper">
+                <img src="${infoPet.img}" alt="${infoPet.name}" class="modal__img">
+            </div>
+            <div class="modal__content">
+                <h3>${infoPet.name}</h3>
+                <h4>${infoPet.type} - ${infoPet.breed}</h4>
+                <p>${infoPet.description}</p>
+                <ul>
+                    <li><b>Age:</b><span> ${infoPet.age}</span></li>
+                    <li><b>Inoculations:</b><span> ${infoPet.inoculations}</span></li>
+                    <li><b>Diseases:</b><span> ${infoPet.diseases}</span></li>
+                    <li><b>Parasites:</b><span> ${infoPet.parasites}</span></li>
+                </ul>
+            </div>
+            <button class="modal__button"><img src="../../assets/icons/black-inactive.png" alt="close" class="modal__img"></button>
+        </div>`); 
+    
+    modalWrapper.classList.add('modal');
+    modalWrapper.addEventListener('click', e => {
+        if (e.target.classList.contains('modal')) {
+            e.target.remove();
+        } else if (e.target.classList.contains('modal__button') || e.target.classList.contains('modal__img')) {
+            document.querySelector('.modal').remove();
+        }
+    });
+
+    return modalWrapper;
 }

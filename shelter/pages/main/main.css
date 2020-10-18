@@ -439,6 +439,98 @@ h5 {
   color: #B2B2B2;
 }
 
+.modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal__card {
+  width: 900px;
+  position: relative;
+  display: flex;
+  column-gap: 29px;
+  background-color: #fff;
+  border-radius: 7px;
+  transform: scale(1);
+  transition: 0.5s;
+}
+.modal__button {
+  width: 45px;
+  padding: 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -50px;
+  right: -33px;
+  border: 2px solid #F1CDB3;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.modal__img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+.modal__img-wrapper {
+  width: 500px;
+}
+.modal__content {
+  width: 350px;
+  padding: 49px 0 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__content h3 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.modal__content h4 {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.modal__content p {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 112%;
+  letter-spacing: 0.06em;
+  margin-bottom: 36px;
+}
+.modal__content p, .modal__content ul li {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 15px;
+}
+.modal__content ul {
+  width: 322px;
+}
+.modal__content ul li {
+  list-style-type: disc;
+  color: #F1CDB3;
+  line-height: 190%;
+  font-family: Georgia;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+.modal__content ul li b {
+  color: #000;
+}
+.modal__content ul li span {
+  color: #000;
+}
+
+.modal-animation {
+  transform: scale(0);
+  transition: 0.5s;
+}
+
 .footer {
   padding: 3.8rem 0 0 0;
   background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
