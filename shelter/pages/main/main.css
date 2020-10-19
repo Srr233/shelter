@@ -471,6 +471,10 @@ h5 {
   border-radius: 50%;
   background-color: transparent;
 }
+.modal__button:hover {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
+}
 .modal__img {
   object-fit: contain;
   height: 100%;
@@ -722,6 +726,49 @@ h5 {
     margin: 59px 0 5.87em 0;
   }
 
+  .modal__card {
+    width: 630px;
+    column-gap: 10px;
+    padding: 0;
+  }
+  .modal__button {
+    width: 50px;
+    top: -51px;
+    right: -41px;
+  }
+  .modal__img-wrapper {
+    width: 350px;
+  }
+  .modal__img {
+    border-radius: 8px;
+  }
+  .modal__content {
+    width: 264px;
+    padding: 11px 0 0 0;
+  }
+  .modal__content h3 {
+    margin-bottom: 8px;
+  }
+  .modal__content h4 {
+    margin-bottom: 20px;
+  }
+  .modal__content p {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .modal__content p, .modal__content ul li {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 13px;
+  }
+  .modal__content ul {
+    width: 236px;
+  }
+  .modal__content ul li {
+    line-height: 158%;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+  }
+
   .help__title {
     width: 50%;
   }
@@ -796,7 +843,7 @@ h5 {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: 123px;
+    top: 100px;
     right: -100%;
     transition: 0.5s;
     display: flex;
@@ -929,6 +976,38 @@ h5 {
   }
   .our-friends__button {
     margin: 41px 0 41px 0;
+  }
+
+  .modal__card {
+    width: 240px;
+    column-gap: 10px;
+    padding: 0;
+  }
+  .modal__button {
+    width: 50px;
+    top: -50px;
+    right: -29px;
+  }
+  .modal__img-wrapper {
+    display: none;
+  }
+  .modal__content {
+    padding: 11px 0 8px 0;
+  }
+  .modal__content h3 {
+    text-align: center;
+    width: 59%;
+  }
+  .modal__content h4 {
+    text-align: center;
+  }
+  .modal__content p {
+    text-align: justify;
+    width: 92%;
+    margin-bottom: 20px;
+  }
+  .modal__content ul {
+    width: 189px;
   }
 
   .help__wrapper {

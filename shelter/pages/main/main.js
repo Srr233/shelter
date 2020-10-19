@@ -257,7 +257,7 @@ function getLearnMoreCard (infoPet) {
 
     modalWrapper.insertAdjacentHTML('afterbegin', `<div class="modal__card modal-animation">
             <div class="modal__img-wrapper">
-                <img src="${infoPet.img}" alt="${infoPet.name}" class="modal__img">
+                <img src="${infoPet.img}" alt="${infoPet.name}" class="modal__img" style="image-rendering: auto;">
             </div>
             <div class="modal__content">
                 <h3>${infoPet.name}</h3>
