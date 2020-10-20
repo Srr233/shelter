@@ -116,13 +116,14 @@ const leftArrow = document.querySelector('.pets__left-arrow--bigger');
 const leftArrowEnd = document.querySelector('.pets__left-arrow');
 const rightArrow = document.querySelector('.pets__right-arrow--bigger');
 const rightArrowEnd = document.querySelector('.pets__right-arrow');
+const pagesBtn = document.querySelectorAll('.pets__navigation-number');
 
 leftArrow.addEventListener('click', sliceCard);
 leftArrowEnd.addEventListener('click', sliceCard);
 rightArrow.addEventListener('click', sliceCard);
 rightArrowEnd.addEventListener('click', sliceCard);
+pagesBtn.forEach(item => item.addEventListener('click', sliceCard));
 
-console.log(getArrayPaginationRandom([1, 2, 3, 4, 5, 6, 7, 8], 3, 12));
 function createCardPetDocument(infoPet) {
     const card = document.createElement('article');
     card.classList.add('card');
@@ -150,6 +151,9 @@ function createCardPetDocument(infoPet) {
 }
 
 const petsDOM = pets.map(pet => createCardPetDocument(pet));
+let allCards;
+let adaptCards;
+let currentSlider;
 
 addPetsDom();
 
@@ -158,25 +162,24 @@ window.onresize = addPetsDom;
 function addPetsDom(direction, index) {
 
     const widthBody = document.body.getBoundingClientRect().width;
-    const slider = document.querySelector('.our-friends__slider');
+    const slider = document.querySelector('.pets__card-wrapper');
     const sliderChildren = slider.children;
-    const length = sliderChildren.length;
-
+    const length = slider.children.length;
     if (typeof direction === 'string') {
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
         }
 
         if (direction === 'right') {
-            index -= length - 2;
-            for (let i = 0; i < length; i++) {
-                slider.append(petsDOM[i + index]);
+            for (let i = 0; i < currentSlider.length; i++) {
+                slider.append(adaptCards[index + 1][i]);
             }
+            currentSlider = adaptCards[index + 1];
         } else if (direction === 'left') {
-            index += length - 1;
-            for (let i = length; i > 0; i--) {
-                slider.append(petsDOM[index - i]);
+            for (let i = 0; i < currentSlider.length; i++) {
+                slider.append(adaptCards[index - 1][i]);
             }
+            currentSlider = adaptCards[index - 1];
         }
 
         for (let i = 0; i < sliderChildren.length; i++) {
@@ -188,68 +191,109 @@ function addPetsDom(direction, index) {
                 sliderChildren[i].classList.remove('slide');
             }
         })
-    } else {
+    } else if (!allCards){
+
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
         }
 
-        if (widthBody < 760) {
-            slider.append(petsDOM[0]);
-        } else if (widthBody < 1126) {
-            for (let i = 0; i < 2; i++) {
-                slider.append(petsDOM[i]);
-            }
-        } else {
+        if (widthBody < 595) {
+            allCards = getArrayPagination(petsDOM, 3, 16);
+            adaptCards = cutterArray(allCards, 3);
             for (let i = 0; i < 3; i++) {
-                slider.append(petsDOM[i]);
+                slider.append(adaptCards[0][i]);
             }
+            currentSlider = adaptCards[0];
+        } else if (widthBody < 921) {
+            allCards = getArrayPagination(petsDOM, 4, 12);
+            adaptCards = cutterArray(allCards, 4);
+            for (let i = 0; i < 4; i++) {
+                slider.append(adaptCards[0][i]);
+            }
+            currentSlider = adaptCards[0];
+        }else if (widthBody < 1225) {
+            allCards = getArrayPagination(petsDOM, 6, 8);
+            adaptCards = cutterArray(allCards, 6);
+            for (let i = 0; i < 6; i++) {
+                slider.append(adaptCards[0][i]);
+            }
+            currentSlider = adaptCards[0];
+        } else {
+            allCards = getArrayPagination(petsDOM, 8, 6);
+            adaptCards = cutterArray(allCards, 8);
+            for (let i = 0; i < 8; i++) {
+                slider.append(adaptCards[0][i]);
+            }
+            currentSlider = adaptCards[0];
         }
     }
 }
 
 function sliceCard(e) {
     const buttonTarget = e.target.tagName === 'IMG' ? e.target.parentElement : e.target;
-    const slider = document.querySelector('.our-friends__slider');
-    const children = slider.children;
 
-    if (buttonTarget.classList.contains('our-friends__arrow-left')) {
-        if (children[0] === petsDOM[1]) {
-            buttonTarget.setAttribute('disabled', true);
-            buttonTarget.classList.add('disabled');
-            addPetsDom('left', petsDOM.indexOf(children[0]));
+    if (buttonTarget.classList.contains('pets__left-arrow--bigger')) {
+        let indexPagination = adaptCards.indexOf(currentSlider);
+        if (indexPagination === 1) {
+            let allElems = [document.querySelector('.pets__left-arrow'), document.querySelector('.pets__left-arrow--bigger')];
+            addDelAttrStyle(allElems, ['disabled'], { 'disabled': true });
+            addDelAttrStyle(allElems, ['btn-change'], {}, false);
+            addPetsDom('left', indexPagination);
         } else {
-            document.querySelector('.our-friends__arrow-right').removeAttribute('disabled');
-            document.querySelector('.our-friends__arrow-right').classList.remove('disabled');
-            addPetsDom('left', petsDOM.indexOf(children[0]));
+            let allElems = [document.querySelector('.pets__right-arrow'), document.querySelector('.pets__right-arrow--bigger')];
+            addDelAttrStyle(allElems, ['disabled'], { 'disabled': true }, false);
+            addDelAttrStyle(allElems, ['btn-change']);
+            addPetsDom('left', indexPagination);
         }
-    } else {
-        if (children[children.length - 1] === petsDOM[petsDOM.length - 2]) {
-            buttonTarget.setAttribute('disabled', true);
-            buttonTarget.classList.add('disabled');
-            addPetsDom('right', petsDOM.indexOf(children[children.length - 1]));
+    } else if (buttonTarget.classList.contains('pets__right-arrow--bigger')) {
+        let indexPagination = adaptCards.indexOf(currentSlider);
+        if (indexPagination === adaptCards.length - 2) {
+            let allElems = [document.querySelector('.pets__right-arrow'), document.querySelector('.pets__right-arrow--bigger')];
+            addDelAttrStyle(allElems, ['disabled'], { 'disabled': true });
+            addDelAttrStyle(allElems, ['btn-change'], {}, false);
+            addPetsDom('right', adaptCards.length - 2);
         } else {
-            document.querySelector('.our-friends__arrow-left').removeAttribute('disabled');
-            document.querySelector('.our-friends__arrow-left').classList.remove('disabled');
-
-            addPetsDom('right', petsDOM.indexOf(children[children.length - 1]));
+            let allElems = [document.querySelector('.pets__left-arrow'), document.querySelector('.pets__left-arrow--bigger')];
+            addDelAttrStyle(allElems, ['disabled'], { 'disabled': true }, false);
+            addDelAttrStyle(allElems, ['btn-change']);
+            addPetsDom('right', indexPagination);
         }
     }
 }
 
-function getArrayPaginationRandom(elementsArray, elementOnDOMCount, paginationCount) {
+function addDelAttrStyle(elementSelectors = [], classList = [''], attrList = {}, isAdd = true) {
 
+    if (isAdd) {
+        elementSelectors.forEach(element => {
+            classList.forEach(item => element.classList.add(item));
+            for (let [key, value] of Object.entries(attrList)) {
+                element.setAttribute(key, value);
+            }
+        });
+    } else {
+        elementSelectors.forEach(element => {
+            classList.forEach(item => element.classList.remove(item));
+            for (let [key, value] of Object.entries(attrList)) {
+                element.removeAttribute(key);
+            }
+        });
+    }
+}
 
+function getArrayPagination(elementsArray, elementOnDOMCount, paginationCount) {
     const adaptiveArray = [];
     const cutArray = cutterArray(elementsArray, elementOnDOMCount);
     let cutArrayUse = cutArray.slice();
+    let reversePage = Math.max(paginationCount, elementOnDOMCount) - Math.min(paginationCount, elementOnDOMCount);
 
     for (let i = 0; i < paginationCount; i++) {
 
         const copyArray = cutArrayUse[0].slice();
 
-        adaptiveArray[i] = copyArray.map(elem => [elem, Math.random()])
-            .sort((a, b) => a[1] - b[1])
-            .map(elem => elem[0]);
+        if (i % reversePage === 0) {
+            adaptiveArray.push(...copyArray.reverse());
+            canReverse = false;
+        } else adaptiveArray.push(...copyArray);
 
         cutArrayUse = cutArrayUse.slice(1);
 
@@ -257,14 +301,17 @@ function getArrayPaginationRandom(elementsArray, elementOnDOMCount, paginationCo
             cutArrayUse = cutArray.slice();
         } else if (cutArrayUse[0].length < elementOnDOMCount) {
             const LENGTH = cutArrayUse[0].length;
-            cutArrayUse = [[...cutArrayUse[0].slice(), ...cutArray[0].slice(LENGTH)]]; 
+            if (Math.random() > 0.5) {
+                cutArrayUse = [[...cutArrayUse[0].slice().reverse(), ...cutArray[0].slice(LENGTH).reverse()]];
+                cutArrayUse[0] = cutArrayUse[0].reverse();
+            } else cutArrayUse = [[...cutArrayUse[0].slice(), ...cutArray[0].slice(LENGTH)]]; 
+
         }
     }
-    return adaptiveArray;
+    return adaptiveArray
 }
 
 function cutterArray (arr, cutCount) {
-
     if (arr.length < cutCount) throw new Error('The array needs to be longer than cut counter!');
 
     const result = [];

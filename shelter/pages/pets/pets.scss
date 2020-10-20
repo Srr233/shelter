@@ -217,18 +217,28 @@ h5 {
                 }
             }
 		&__left-arrow {
-            @include bttn-pets(12px, 12px);
+            @include bttn-pets(12px, 12px, #000000, 2px solid $color-primary);
            cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
         }
         &__left-arrow--bigger {
-            @include bttn-pets(13px, 18px);
+            @include bttn-pets(13px, 18px, #000000, 2px solid $color-primary);
             cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
         }
+        &__left-arrow.disabled {
+            @include bttn-pets(12px, 12px);
+           
+        }
+        &__left-arrow--bigger.disabled {
+            @include bttn-pets(13px, 18px);
+            
+        }
+        
 
         &__navigation-number {
             background: $color-primary;
             border-radius: 100px;
             padding: 14px 21px;
+            cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
         }
 
         &__right-arrow {
@@ -238,6 +248,14 @@ h5 {
         &__right-arrow--bigger {
             @include bttn-pets(13px, 18px, #000000, 2px solid $color-primary);
             cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
+        }
+        &__right-arrow.disabled {
+            @include bttn-pets(12px, 12px);
+           
+        }
+        &__right-arrow--bigger.disabled {
+            @include bttn-pets(13px, 18px);
+            
         }
 }
 .btn-change:hover {
@@ -436,14 +454,6 @@ h5 {
 
 
 @media (max-width: 1228px) {
-    .pets__card-wrapper {
-        article:nth-last-child(1) {
-            display: none;
-            }
-        article:nth-last-child(2) {
-            display: none;
-        }
-    }
      .start-screen__wrapper {
         flex-direction: column;
         align-items: center;
@@ -483,12 +493,6 @@ h5 {
             margin-top: 39px;
             justify-content: center;
 
-            article:nth-last-child(1) {
-                display: none;
-            }
-            article:nth-last-child(2) {
-                display: none;
-            }
         }
         &__navigation {
             padding: 37px 0 79px 0;
@@ -582,22 +586,6 @@ h5 {
         }
         &__card-wrapper {
             row-gap: 29.5px;
-
-            article:nth-child(2) {
-                display:none;
-            }
-            article:nth-last-child(1) {
-                display: none;
-            }
-            article:nth-last-child(2) {
-                display: none;
-            }
-            article:nth-last-child(3) {
-                display: none;
-            }
-            article:nth-last-child(5) {
-                display: none;
-            }
         }
         &__navigation {
             width: 300px;
