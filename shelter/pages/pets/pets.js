@@ -162,6 +162,7 @@ window.onresize = addPetsDom;
 function addPetsDom(direction, index) {
 
     const widthBody = document.body.getBoundingClientRect().width;
+    const pageCount = document.querySelector('.pets__navigation-number')
     const slider = document.querySelector('.pets__card-wrapper');
     const sliderChildren = slider.children;
     const length = slider.children.length;
@@ -186,18 +187,18 @@ function addPetsDom(direction, index) {
             sliderChildren[i].classList.add('slide');
         }
 
-        setTimeout(() => {
-            for (let i = 0; i < sliderChildren.length; i++) {
-                sliderChildren[i].classList.remove('slide');
-            }
-        })
-    } else if (!allCards){
+        for (let i = 0; i < sliderChildren.length; i++) {
+            setTimeout(() => sliderChildren[i].classList.remove('slide'), i * 35);
+        }
+
+        pageCount.textContent = adaptCards.indexOf(currentSlider) + 1;
+    } else {
 
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
         }
 
-        if (widthBody < 595) {
+        if (widthBody < 599) {
             allCards = getArrayPagination(petsDOM, 3, 16);
             adaptCards = cutterArray(allCards, 3);
             for (let i = 0; i < 3; i++) {
@@ -226,6 +227,7 @@ function addPetsDom(direction, index) {
             }
             currentSlider = adaptCards[0];
         }
+        pageCount.textContent = '1';
     }
 }
 
@@ -258,6 +260,24 @@ function sliceCard(e) {
             addDelAttrStyle(allElems, ['btn-change']);
             addPetsDom('right', indexPagination);
         }
+    } else if (buttonTarget.classList.contains('pets__left-arrow')) {
+        let allElems = [document.querySelector('.pets__left-arrow'), document.querySelector('.pets__left-arrow--bigger')];
+        addDelAttrStyle(allElems, ['disabled'], { 'disabled': true });
+        addDelAttrStyle(allElems, ['btn-change'], {}, false);
+        addPetsDom('left', 1);
+
+        let allElems1 = [document.querySelector('.pets__right-arrow'), document.querySelector('.pets__right-arrow--bigger')];
+        addDelAttrStyle(allElems1, ['disabled'], { 'disabled': true }, false);
+        addDelAttrStyle(allElems1, ['btn-change']);
+    } else if (buttonTarget.classList.contains('pets__right-arrow')) {
+        let allElems = [document.querySelector('.pets__right-arrow'), document.querySelector('.pets__right-arrow--bigger')];
+        addDelAttrStyle(allElems, ['disabled'], { 'disabled': true });
+        addDelAttrStyle(allElems, ['btn-change'], {}, false);
+        addPetsDom('right', adaptCards.length - 2);
+
+        let allElems1 = [document.querySelector('.pets__left-arrow'), document.querySelector('.pets__left-arrow--bigger')];
+        addDelAttrStyle(allElems1, ['disabled'], { 'disabled': true }, false);
+        addDelAttrStyle(allElems1, ['btn-change']);
     }
 }
 

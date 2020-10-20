@@ -64,9 +64,11 @@ h5 {
 .header {
     width: 100%;
 
-    position: fixed;
-    padding: 31px 0 0 0;
     top: 0;
+    z-index: 50;
+    position: fixed;
+    
+    padding: 31px 0 0 0;
 
     background: rgba(255, 255, 255, 0.5);
         &__wrapper {
@@ -263,6 +265,119 @@ h5 {
     background: $color-primary-light;
 }
 
+.modal {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    &__card {
+        width: 900px;
+
+        position: relative;
+
+        display: flex;
+        column-gap: 29px;
+        background-color: #fff;
+
+        border-radius: 7px;
+
+        transform: scale(1);
+        transition: .5s;
+    }
+    &__button {
+        width: 45px;
+        padding: 15px 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: -50px;
+        right: -33px;
+        
+        border: 2px solid $color-primary;
+        border-radius: 50%;
+
+        background-color: transparent;
+    }
+    &__button:hover {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+    }
+    &__img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+    &__img-wrapper {
+        width: 500px;
+    }
+    &__content {
+        width: 350px;
+        padding: 49px 0 80px 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        h4 {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        p {
+            font-family: Georgia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 112%;
+
+            letter-spacing: 0.06em;
+
+            margin-bottom: 36px;
+        }
+        p, ul li {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+        }
+        ul {
+            width: 322px;
+        }
+        ul li {
+            list-style-type: disc;
+            color: $color-primary;
+            line-height: 190%;
+
+            font-family: Georgia;
+            font-style: normal;
+            font-size: 15px;
+
+            letter-spacing: 0.06em;
+        }
+        ul li b {
+            color: #000;
+        }
+        ul li span {
+            color: #000;
+        }
+    }
+}
+.modal-animation {
+    transform:scale(0);
+    transition: .5s;
+}
+
 .card {
     width: 270px;
 
@@ -273,6 +388,7 @@ h5 {
     background: $color-light-s;
     border-radius: 9px;
     
+    transform: scale(1);
     transition: .5s;
     &:hover {
         cursor: url(../../assets/icons/cursor/Union-hover-black.png), pointer;
@@ -329,8 +445,10 @@ h5 {
             background: $color-primary-light;
         }
 }
-
-
+.card.slide {
+    transform: scale(0);
+    transition: .5s;
+}
 
 .footer {
     padding: 38px 0 0 0;
@@ -468,6 +586,51 @@ h5 {
             width: 100%;
         }
     }
+    .modal {
+        &__card {
+            width: 630px;
+            column-gap: 10px;
+            padding: 0;
+        }
+        &__button {
+            width: 50px;
+            top: -51px;
+            right: -41px;
+        }
+        &__img-wrapper {
+            width: 350px;
+        }
+        &__img {
+            border-radius: 8px;
+        }
+        &__content {
+            width: 264px;
+            padding: 11px 0 0 0 ;
+
+            h3 {
+                margin-bottom: 8px;
+            }
+            h4 {
+                margin-bottom: 20px;
+            }
+            p {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+            p, ul li {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 13px;
+            }
+            ul {
+                width: 236px;
+            }
+            ul li {
+                line-height: 158%;
+                font-size: 15px;
+                letter-spacing: 0.06em;
+            }
+        }
+    }
     .footer__wrapper {
         flex-direction: column;
     }
@@ -593,6 +756,41 @@ h5 {
             padding: 28px 0 31.7px 0;
         }
     }
+    .modal {
+
+        &__card {
+            width: 240px;
+            column-gap: 10px;
+            padding: 0;
+        }
+        &__button {
+            width: 50px;
+            top: -50px;
+            right: -29px;
+        }
+        &__img-wrapper {
+            display: none;
+        }
+        &__content {
+            padding: 11px 0 8px 0 ;
+
+            h3 {
+                text-align: center;
+                width: 59%;
+            }
+            h4 {
+                text-align: center;
+            }
+            p {
+                text-align: justify;
+                width: 92%;
+                margin-bottom: 20px;
+            }
+            ul {
+                width: 189px;
+            }
+    }
+}
     .footer {
         &__content-wrapper {
             flex-direction: column;
