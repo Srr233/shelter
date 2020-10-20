@@ -357,7 +357,7 @@ function showPetCard(petDOM) {
     const specific = pets.find(item => item.id === petDOM.dataset.id);
 
     document.querySelector('main').append(getLearnMoreCard(specific));
-    setTimeout(() => document.querySelector('.modal__card').classList.remove('modal-animation'), 10);
+    setTimeout(() => document.querySelector('.modal__card').classList.remove('modal-animation'), 20);
 }
 
 function getLearnMoreCard(infoPet) {
