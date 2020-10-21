@@ -153,7 +153,7 @@ function createCardPetDocument (infoPet) {
 }
 
 const petsDOM = pets.map(pet => createCardPetDocument(pet));
-
+let canRefresh = true;
 addPetsDom();
 
 window.onresize = addPetsDom;
@@ -171,27 +171,37 @@ function addPetsDom (direction, index) {
         }
 
         if (direction === 'right') {
-            index -= length - 2;
+            index += 1;
             for (let i = 0; i < length; i++) {
-                slider.append(petsDOM[i + index]);
+                if (i + index > petsDOM.length - 1) {
+                    index = 0;
+                    slider.append(petsDOM[0]);
+                } else slider.append(petsDOM[i + index]);
             }
         } else if (direction === 'left') {
-            index += length - 1; 
+            index -= 1; 
             for (let i = length; i > 0; i--) {
-                slider.append(petsDOM[index - i]);
+                if (index - i < 0) {
+                    index = petsDOM.length - 1;
+                    slider.append(petsDOM[index - i]);
+                } else slider.append(petsDOM[index - i]);
             }
         }
 
         for (let i = 0; i < sliderChildren.length; i++) {
             sliderChildren[i].classList.add('slide');
         }
-
-        setTimeout(() => {
-            for (let i = 0; i < sliderChildren.length; i++) {
-                sliderChildren[i].classList.remove('slide');
+        for (let i = 0; i < sliderChildren.length; i++) {
+            if (i === 0) {
+                setTimeout(() => sliderChildren[i].classList.remove('slide'), 20);
+            } else {
+                setTimeout(() => {
+                    sliderChildren[i].classList.remove('slide');
+                }, i * 50);
             }
-        })
-    } else {
+        }
+    } else if(canRefresh) {
+        canRefresh = false;
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
         }
@@ -216,24 +226,15 @@ function sliceCard(e) {
     const children = slider.children;
     
     if (buttonTarget.classList.contains('our-friends__arrow-left')) {
-        if (children[0] === petsDOM[1]) {
-            buttonTarget.setAttribute('disabled', true);
-            buttonTarget.classList.add('disabled');
-            addPetsDom('left', petsDOM.indexOf(children[0]));
+        if (children[0] === petsDOM[0]) {
+            addPetsDom('left', petsDOM.length - 1);
         } else {
-            document.querySelector('.our-friends__arrow-right').removeAttribute('disabled');
-            document.querySelector('.our-friends__arrow-right').classList.remove('disabled');
             addPetsDom('left', petsDOM.indexOf(children[0]));
         }
     } else {
-        if (children[children.length - 1] === petsDOM[petsDOM.length - 2]) {
-            buttonTarget.setAttribute('disabled', true);
-            buttonTarget.classList.add('disabled');
-            addPetsDom('right', petsDOM.indexOf(children[children.length - 1]));
+        if (children[children.length - 1] === petsDOM[petsDOM.length - 1]) {
+            addPetsDom('right', 0);
         } else {
-            document.querySelector('.our-friends__arrow-left').removeAttribute('disabled');
-            document.querySelector('.our-friends__arrow-left').classList.remove('disabled');
-
             addPetsDom('right', petsDOM.indexOf(children[children.length - 1]));
         }
     }

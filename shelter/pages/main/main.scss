@@ -78,8 +78,8 @@ h5 {
             transition: .5s;
         }
         &__wrapper.top {
-            top: 0px;
-            background-color: rgba($color: #000000, $alpha: 0.3);
+            background-color: rgba($color: $color-dark-xl, $alpha: 1);
+            border-radius: 4px;
             transition: .5s;
         }
         &__title {
@@ -111,7 +111,6 @@ h5 {
         }
         &__nav {
             width: 442px;
-            padding-top: 1.07em;
         }
         &__ul {
             width:100%;
@@ -1081,7 +1080,7 @@ h5 {
             width: 306px;
         }
         &__button {
-            margin: 0 49px;
+            margin: 0 auto;
         }
         &__img-container {
             width: 260px;
@@ -1277,9 +1276,11 @@ h5 {
 .footer {
     &__content-wrapper {
         width: 100%;
-        flex-direction: column;
+
         row-gap: 44px;
         margin-bottom: 94px;
+        align-items: center;
+        flex-direction: column;
 
         div {
             align-items: center;

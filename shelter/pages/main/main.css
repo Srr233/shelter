@@ -58,8 +58,8 @@ h5 {
   transition: 0.5s;
 }
 .header__wrapper.top {
-  top: 0px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #4c4c4c;
+  border-radius: 4px;
   transition: 0.5s;
 }
 .header__title {
@@ -84,7 +84,6 @@ h5 {
 }
 .header__nav {
   width: 442px;
-  padding-top: 1.07em;
 }
 .header__ul {
   width: 100%;
@@ -903,7 +902,7 @@ h5 {
     width: 306px;
   }
   .start-screen__button {
-    margin: 0 49px;
+    margin: 0 auto;
   }
   .start-screen__img-container {
     width: 260px;
@@ -1093,9 +1092,10 @@ h5 {
 
   .footer__content-wrapper {
     width: 100%;
-    flex-direction: column;
     row-gap: 44px;
     margin-bottom: 94px;
+    align-items: center;
+    flex-direction: column;
   }
   .footer__content-wrapper div {
     align-items: center;

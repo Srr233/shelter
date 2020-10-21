@@ -154,7 +154,7 @@ const petsDOM = pets.map(pet => createCardPetDocument(pet));
 let allCards;
 let adaptCards;
 let currentSlider;
-
+let canRefresh = true;
 addPetsDom();
 
 window.onresize = addPetsDom;
@@ -188,12 +188,12 @@ function addPetsDom(direction, index) {
         }
 
         for (let i = 0; i < sliderChildren.length; i++) {
-            setTimeout(() => sliderChildren[i].classList.remove('slide'), i * 35);
+            setTimeout(() => sliderChildren[i].classList.remove('slide'), i * 50);
         }
 
         pageCount.textContent = adaptCards.indexOf(currentSlider) + 1;
-    } else {
-
+    } else if (canRefresh) {
+        canRefresh = false;
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
         }
@@ -219,7 +219,7 @@ function addPetsDom(direction, index) {
                 slider.append(adaptCards[0][i]);
             }
             currentSlider = adaptCards[0];
-        } else {
+        } else if (widthBody > 1225) {
             allCards = getArrayPagination(petsDOM, 8, 6);
             adaptCards = cutterArray(allCards, 8);
             for (let i = 0; i < 8; i++) {

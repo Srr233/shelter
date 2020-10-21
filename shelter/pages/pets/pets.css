@@ -50,7 +50,7 @@ h5 {
   z-index: 50;
   position: fixed;
   padding: 31px 0 0 0;
-  background: rgba(255, 255, 255, 0.5);
+  background: white;
 }
 .header__wrapper {
   width: 100%;
@@ -608,7 +608,7 @@ h5 {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: 123px;
+    top: 90px;
     right: -100%;
     transition: 0.5s;
     display: flex;
