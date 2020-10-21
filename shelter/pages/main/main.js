@@ -7,15 +7,6 @@ BURGER_BTN.addEventListener("click", e => {
     Array.from(element.children).forEach(span => span.classList.toggle("active"));
     Array.from(A_LINKS).forEach(link => link.classList.toggle("active"));
     NAVIGATION.classList.toggle("active");
-})
-
-window.addEventListener('scroll', function() {
-    const elem = document.querySelector('.header__wrapper');
-  if (pageYOffset === 0) {
-      elem.classList.toggle("top");
-  } else {
-      elem.classList.add("top");
-  }
 });
 
 //--------------------------------------------------------------------------

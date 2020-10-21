@@ -73,14 +73,6 @@ h5 {
 
             display: flex;
             justify-content: space-between;
-
-            background-color: transparent;
-            transition: .5s;
-        }
-        &__wrapper.top {
-            background-color: rgba($color: $color-dark-xl, $alpha: 1);
-            border-radius: 4px;
-            transition: .5s;
         }
         &__title {
                 font-family: Georgia;
@@ -824,7 +816,7 @@ h5 {
         width: 92.1%;
         top: 31px;
         
-        position: fixed;
+        position: absolute;
         display: flex;
         justify-content: space-between;
     }
@@ -999,7 +991,7 @@ h5 {
     }
     .header {
         &__wrapper {
-            position: fixed;
+            position: absolute;
             nav.active {
                 right: 0;
                 transform: translate(0);

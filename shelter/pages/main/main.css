@@ -54,13 +54,6 @@ h5 {
   width: 97.5%;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
-  transition: 0.5s;
-}
-.header__wrapper.top {
-  background-color: #4c4c4c;
-  border-radius: 4px;
-  transition: 0.5s;
 }
 .header__title {
   font-family: Georgia;
@@ -669,7 +662,7 @@ h5 {
   .header__wrapper {
     width: 92.1%;
     top: 31px;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
   }
@@ -832,7 +825,7 @@ h5 {
   }
 
   .header__wrapper {
-    position: fixed;
+    position: absolute;
   }
   .header__wrapper nav.active {
     right: 0;
