@@ -191,8 +191,11 @@ h5 {
             display: flex;
             justify-content: center;
             flex-flow: row wrap;
-            row-gap: 29px;
+            margin-bottom: 29px;
+            -webkit-column-gap: 40px;
+            -moz-column-gap: 40px; 
             column-gap: 40px;
+
             margin-top: 59px;
         }
 
@@ -200,7 +203,7 @@ h5 {
 		&__navigation {
             width: 34rem;
 
-            padding: 60px 0 100px 0;
+            padding: 3px 0 99px 0;
 
             display: flex;
             justify-content: space-between;
@@ -384,6 +387,8 @@ h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    margin-bottom: 29px;
 
     background: $color-light-s;
     border-radius: 9px;
@@ -658,7 +663,7 @@ h5 {
 
         }
         &__navigation {
-            padding: 37px 0 79px 0;
+            padding: 3px 0 99px 0;
         }
     }
     .footer {
@@ -748,12 +753,12 @@ h5 {
             }
         }
         &__card-wrapper {
-            row-gap: 29.5px;
+            margin-bottom: 29.5px;
         }
         &__navigation {
             width: 300px;
 
-            padding: 28px 0 31.7px 0;
+            padding: 3px 0 99px 0;
         }
     }
     .modal {
