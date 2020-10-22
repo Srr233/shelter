@@ -208,6 +208,32 @@ function addPetsDom (direction, index) {
                 slider.append(petsDOM[i]);
             }
         }
+    } else {
+        let temperary = [];
+        for (let i = 0; i < length; i++) {
+            temperary.push(sliderChildren[0])
+            sliderChildren[0].remove();
+        }
+
+        if (widthBody < 760) {
+            slider.append(petsDOM[petsDOM.indexOf(temperary[0])]);
+        } else if (widthBody < 1126) {
+            for (let i = 0; i < 2; i++) {
+                if (!temperary[1]) {
+                    if (!petsDOM[petsDOM.indexOf(temperary[0]) + 1]) temperary.push(petsDOM[0]);
+                    temperary.push(petsDOM[petsDOM.indexOf(temperary[0]) + 1]);
+                }
+                slider.append(petsDOM[petsDOM.indexOf(temperary[i])]);
+            }
+        } else {
+            for (let i = 0; i < 3; i++) {
+                if (!temperary[2]) {
+                    if (!petsDOM[petsDOM.indexOf(temperary[1]) + 1]) temperary.push(petsDOM[0]);
+                    temperary.push(petsDOM[petsDOM.indexOf(temperary[1]) + 1]);
+                }
+                slider.append(petsDOM[petsDOM.indexOf(temperary[i])]);
+            }
+        }
     }
 }
 

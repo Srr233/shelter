@@ -154,7 +154,8 @@ const petsDOM = pets.map(pet => createCardPetDocument(pet));
 let allCards;
 let adaptCards;
 let currentSlider;
-let canRefresh = true;
+let resize;
+let canResize = true;
 addPetsDom();
 
 window.onresize = addPetsDom;
@@ -166,6 +167,7 @@ function addPetsDom(direction, index) {
     const slider = document.querySelector('.pets__card-wrapper');
     const sliderChildren = slider.children;
     const length = slider.children.length;
+    resize = resize ? resize : widthBody;
     if (typeof direction === 'string') {
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
@@ -192,12 +194,19 @@ function addPetsDom(direction, index) {
         }
 
         pageCount.textContent = adaptCards.indexOf(currentSlider) + 1;
-    } else if (canRefresh) {
-        canRefresh = false;
+    } else if (resize !== widthBody || canResize) {
+        let allElems = [document.querySelector('.pets__left-arrow'), document.querySelector('.pets__left-arrow--bigger')];
+        addDelAttrStyle(allElems, ['disabled'], { 'disabled': true });
+        addDelAttrStyle(allElems, ['btn-change'], {}, false);
+
+        let allElems1 = [document.querySelector('.pets__right-arrow'), document.querySelector('.pets__right-arrow--bigger')];
+        addDelAttrStyle(allElems1, ['disabled'], { 'disabled': true }, false);
+        addDelAttrStyle(allElems1, ['btn-change']);
+
+        canResize = false;
         for (let i = 0; i < length; i++) {
             sliderChildren[0].remove();
         }
-
         if (widthBody < 599) {
             allCards = getArrayPagination(petsDOM, 3, 16);
             adaptCards = cutterArray(allCards, 3);
@@ -228,7 +237,7 @@ function addPetsDom(direction, index) {
             currentSlider = adaptCards[0];
         }
         pageCount.textContent = '1';
-    }
+    } 
 }
 
 function sliceCard(e) {
